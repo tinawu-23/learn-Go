@@ -113,3 +113,27 @@ var str1, str2 string
 str1 = "hello"
 str2 = "world"
 ```
+</br>
+
+======== (•ө•)♡ (๑˃̵ᴗ˂̵)ﻭ ʕ•ᴥ•ʔ ٩(♡ε♡ )۶ (•ө•)♡ (๑˃̵ᴗ˂̵)ﻭ ʕ•ᴥ•ʔ ٩(♡ε♡ )۶ (•ө•)♡ (๑˃̵ᴗ˂̵)ﻭ ʕ•ᴥ•ʔ ٩(♡ε♡ )۶ (•ө•)♡ ========  
+### Section III: Conditionals    
+```
+isHungry := false
+if isHungry {
+    fmt.Println("Eat the cookie") 
+} else {
+    fmt.Println("Step away from the cookie...")
+}
+```
+**Operators:**     
+equal: `==`   
+unequal: `!=`    
+and: `&&`    
+or: `||`    
+not: `!`   
+
+_code see conditionals.go_     (if else; switch; scoped short declaration)    
+
+**Random:**    
+_code see random.go_
+
