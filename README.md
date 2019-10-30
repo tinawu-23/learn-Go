@@ -117,14 +117,6 @@ str2 = "world"
 
 ======== (•ө•)♡ (๑˃̵ᴗ˂̵)ﻭ ʕ•ᴥ•ʔ ٩(♡ε♡ )۶ (•ө•)♡ (๑˃̵ᴗ˂̵)ﻭ ʕ•ᴥ•ʔ ٩(♡ε♡ )۶ (•ө•)♡ (๑˃̵ᴗ˂̵)ﻭ ʕ•ᴥ•ʔ ٩(♡ε♡ )۶ (•ө•)♡ ========  
 ### Section III: Conditionals    
-```
-isHungry := false
-if isHungry {
-    fmt.Println("Eat the cookie") 
-} else {
-    fmt.Println("Step away from the cookie...")
-}
-```
 **Operators:**     
 equal: `==`   
 unequal: `!=`    
@@ -137,3 +129,53 @@ _code see conditionals.go_     (if else; switch; scoped short declaration)
 **Random:**    
 _code see random.go_
 
+</br>
+
+======== (•ө•)♡ (๑˃̵ᴗ˂̵)ﻭ ʕ•ᴥ•ʔ ٩(♡ε♡ )۶ (•ө•)♡ (๑˃̵ᴗ˂̵)ﻭ ʕ•ᴥ•ʔ ٩(♡ε♡ )۶ (•ө•)♡ (๑˃̵ᴗ˂̵)ﻭ ʕ•ᴥ•ʔ ٩(♡ε♡ )۶ (•ө•)♡ ========  
+### Section IV: Functions   
+**Return Type:**
+```
+func isItLateInNewYork() string {  // return type is a string
+
+}
+```
+**Function Parameters:**
+```
+func multiplier(x int32, y int32) int32 {  // or func multiplier(x, y int32) int32
+  return x * y
+}
+```
+**Multiple Return Values:**
+```
+func GPA(midtermGrade float32, finalGrade float32) (string, float32) {  // returns a string and a float32
+
+}
+```
+_code see functions.go_     
+</br>
+
+**Deferring Resolution:**
+```
+func calculateTaxes(revenue, deductions, credits float64) float64 {
+  defer fmt.Println("Taxes Calculated!") // defer statement here
+
+  taxRate := .06143
+  fmt.Println("Calculating Taxes")
+
+  if deductions == 0 || credits == 0 {
+    return revenue * taxRate
+  }
+
+  taxValue := (revenue - (deductions * credits)) * taxRate
+  if taxValue >= 0 {
+    return taxValue
+  } else {
+    return 0
+  }
+}
+```
+when we call calculateTaxes(), we immediately defer the message "Taxes Calculated!", which does not print until the end of the function (after the taxes have been calculated and are about to be returned).    
+Normally, we would just add fmt.Println("Taxes Calculated!") at _the end_ of calculateTaxes(); But here, we have multiple return statements in our code, so instead of adding a print statement right before each return, we use defer and it prints regardless of when our function ends.
+
+_code see defer.go_     
+</br>
