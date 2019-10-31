@@ -178,4 +178,49 @@ when we call calculateTaxes(), we immediately defer the message "Taxes Calculate
 Normally, we would just add fmt.Println("Taxes Calculated!") at _the end_ of calculateTaxes(); But here, we have multiple return statements in our code, so instead of adding a print statement right before each return, we use defer and it prints regardless of when our function ends.
 
 _code see defer.go_     
+
 </br>
+
+======== (•ө•)♡ (๑˃̵ᴗ˂̵)ﻭ ʕ•ᴥ•ʔ ٩(♡ε♡ )۶ (•ө•)♡ (๑˃̵ᴗ˂̵)ﻭ ʕ•ᴥ•ʔ ٩(♡ε♡ )۶ (•ө•)♡ (๑˃̵ᴗ˂̵)ﻭ ʕ•ᴥ•ʔ ٩(♡ε♡ )۶ (•ө•)♡ ========  
+### Section V: Addresses and Pointers   
+**Addresses:** 
+```
+x := "throw the ball 10 times"
+fmt.Println(&x) // Prints 0x414020
+```
+**Pointers:**    
+`var pointerForInt *int`     
+Store the address of a variable that has an int data type. 
+To break it down more, the `*` operator signifies that this variable will store an address, and the `int` portion means that the address contains an integer value.     
+```
+var pointerForInt *int
+minutes := 525600
+pointerForInt = &minutes
+fmt.Println(pointerForInt) // Prints 0xc000018038
+```
+```
+minutes := 55
+pointerForInt := &minutes // declare a pointer implicitly
+```    
+**Dereferencing:**  
+```
+lyrics := "All the shine of a thousand spotlights" 
+pointerForStr := &lyrics  // the address of lyrics
+
+*pointerForStr = "Like a river flows surely to the sea"  // assign this new value to that address block
+fmt.Println(lyrics) // Prints: Like a river flows surely to the sea
+```
+**Changing values in different scopes:**
+```
+func addHundred (numPtr *int) {  // *int stores the address
+  *numPtr += 100  // dereference, reassign
+}
+
+func main() {
+  x := 1
+  addHundred(&x) // pass in the address of x
+  fmt.Println(x) // Prints 101
+}
+```
+
+======== (•ө•)♡ (๑˃̵ᴗ˂̵)ﻭ ʕ•ᴥ•ʔ ٩(♡ε♡ )۶ (•ө•)♡ (๑˃̵ᴗ˂̵)ﻭ ʕ•ᴥ•ʔ ٩(♡ε♡ )۶ (•ө•)♡ (๑˃̵ᴗ˂̵)ﻭ ʕ•ᴥ•ʔ ٩(♡ε♡ )۶ (•ө•)♡ ========  
